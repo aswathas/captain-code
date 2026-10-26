@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Captain Code — The Captain Command Centre for Claude Code</title>
+<meta name="description" content="Captain Code is a local control room for your Claude Code install: skills, plugins, MCP servers, settings, memory and token telemetry. Loopback-only, no account, MIT licensed." />
+<meta property="og:title" content="Captain Code — The Captain Command Centre" />
+<meta property="og:description" content="Your Claude Code install, under command. Local-first control room: skills, plugins, MCP, settings, memory, token telemetry." />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/main.css" />
+<link rel="icon" href="assets/img/favicon.png" />
+</head>
+<body>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker__track">
+    <span>LOCAL-FIRST</span><span class="tick">★</span><span>BOUND TO 127.0.0.1</span><span class="tick">★</span><span>NO ACCOUNT</span><span class="tick">★</span><span>NO TELEMETRY LEAVES THE BOX</span><span class="tick">★</span><span>SECRETS MASKED ON READ</span><span class="tick">★</span><span>EVERY WRITE BACKED UP</span><span class="tick">★</span><span>LOCAL-FIRST</span><span class="tick">★</span><span>BOUND TO 127.0.0.1</span><span class="tick">★</span><span>NO ACCOUNT</span><span class="tick">★</span><span>NO TELEMETRY LEAVES THE BOX</span><span class="tick">★</span><span>SECRETS MASKED ON READ</span><span class="tick">★</span><span>EVERY WRITE BACKED UP</span><span class="tick">★</span>
+  </div>
+</div>
+
+<header class="masthead">
+  <a class="brand" href="#top">
+    <img class="brand__mark" src="assets/img/emblem.jpg" alt="Captain Code shield emblem, engraved in black ink" />
+    <span class="brand__type">
+      <strong>CAPTAIN CODE</strong>
+      <em>The Captain Command Centre</em>
+    </span>
+  </a>
+  <nav class="nav" aria-label="Sections">
+    <a href="#situation">Situation</a>
+    <a href="#console">Console</a>
+    <a href="#mission">Mission</a>
+    <a href="#oath">Oath</a>
+    <a href="#ledger">Ledger</a>
+    <a href="#deploy" class="nav__cta">Deploy</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="hero__grid">
+      <div class="hero__copy">
+        <p class="stamp">FIELD MANUAL · MISSION 01 · LOCAL ONLY</p>
+        <h1 class="hero__title">
+          <span>Your Claude Code</span>
+          <span class="hero__title--big">UNDER COMMAND.</span>
+        </h1>
+        <p class="hero__lede">
+          Claude Code is a CLI with real state — <em>settings.json</em>, skill folders, a plugin registry,
+          MCP server definitions, memory files, and one JSONL transcript per session. All of it on disk.
+          None of it visible.
+        </p>
+        <p class="hero__lede">
+          <strong>Captain Code</strong> is the control room that reads those exact files and writes back
+          to them — on your machine, on loopback, with nothing uploaded and no account to create.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--solid" href="https://github.com/aswathas/claude-command-center" target="_blank" rel="noopener">
+            <span>Deploy the Console</span>
+            <span class="btn__arrow">→</span>
+          </a>
+          <a class="btn btn--ghost" href="#mission">Read the field manual</a>
+        </div>
+        <p class="hero__meta">MIT licensed · Node 18+ · <code>npm install &amp;&amp; npm start</code> · lives at <code>127.0.0.1:8787</code></p>
+      </div>
+      <figure class="hero__art">
+        <div class="hero__artframe">
+          <img src="assets/img/emblem.jpg" alt="Engraved shield emblem with a five-pointed star" />
+          <span class="hero__artstamp">SHIELD ACTIVE</span>
+        </div>
+      </figure>
+    </div>
+
+    <ul class="readout" aria-label="What the command centre reads on a real install">
+      <li><b>181</b><span>skill folders · 33 parked</span></li>
+      <li><b>29</b><span>installed plugins</span></li>
+      <li><b>5</b><span>global MCP servers</span></li>
+      <li><b>31</b><span>memory files</span></li>
+      <li><b>869<i>MB</i></b><span>of transcripts indexed</span></li>
+      <li><b>&lt;1<i>s</i></b><span>rescan from cache</span></li>
+    </ul>
+  </section>
+
+  <!-- ============ SITUATION ============ -->
+  <section class="band band--ink" id="situation">
+    <div class="wrap">
+      <p class="kicker">Chapter 01 — The Situation</p>
+      <h2 class="h2">181 skills on the machine.<br />No way to see which ones were on.</h2>
+      <div class="cols">
+        <p>
+          The CLI is excellent at doing the work and terrible at telling you the state of the install.
+          You know the skills are there. You do not know which are enabled, which are parked, which
+          plugins are switched on, what the MCP servers point at, or what last month cost.
+        </p>
+        <p>
+          So the state lives on disk, unread, until a tool writes a new line into it. The Captain
+          Command Centre reads the same files the tool reads, in the same machine — no wrapper, no
+          exported report, no second source of truth.
+        </p>
+      </div>
+      <ul class="checks">
+        <li>Real files, real paths — every number traces back to a file on your disk</li>
+        <li>Nothing is deleted to disable it — folders move aside, nothing is destroyed</li>
+        <li>Secrets never leave the process — they render as <code>125 chars · hidden</code></li>
+        <li>Every mutation is reversible — a timestamped backup sits beside each file</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ CONSOLE ============ -->
+  <section class="band band--paper" id="console">
+    <div class="wrap">
+      <p class="kicker">Chapter 02 — The Console</p>
+      <h2 class="h2">Seven stations.<br />One machine. One operator.</h2>
+      <div class="grid7">
+
+        <article class="card">
+          <span class="card__no">01</span>
+          <h3>Console</h3>
+          <p class="card__reads">reads</p>
+          <p>Every transcript under <code>~/.claude/projects</code>, the job records, the running tasks.</p>
+          <p class="card__writes">writes</p>
+          <p>Nothing. The console is a window, not a hand.</p>
+        </article>
+
+        <article class="card">
+          <span class="card__no">02</span>
+          <h3>Tasks</h3>
+          <p class="card__reads">reads</p>
+          <p>Job records, live processes on the box, tasks this dashboard started.</p>
+          <p class="card__writes">writes</p>
+          <p>Starts and stops headless <code>claude</code> runs.</p>
+        </article>
+
+        <article class="card">
+          <span class="card__no">03</span>
+          <h3>Skills</h3>
+          <p class="card__reads">reads</p>
+          <p><code>~/.claude/skills</code> and <code>~/.claude/skills-off</code>.</p>
+          <p class="card__writes">writes</p>
+          <p>Moves a folder between the two. Never deletes.</p>
+        </article>
+
+        <article class="card">
+          <span class="card__no">04</span>
+          <h3>Plugins</h3>
+          <p class="card__reads">reads</p>
+          <p><code>installed_plugins.json</code> and the marketplace catalogue.</p>
+          <p class="card__writes">writes</p>
+          <p><code>enabledPlugins</code> in <code>settings.json</code>.</p>
+        </article>
+
+        <article class="card">
+          <span class="card__no">05</span>
+          <h3>MCP Servers</h3>
+          <p class="card__reads">reads</p>
+          <p><code>mcpServers</code> in <code>~/.claude.json</code>, global and per project.</p>
+          <p class="card__writes">writes</p>
+          <p>Same file, plus the parked-servers file.</p>
+        </article>
+
+        <article class="card">
+          <span class="card__no">06</span>
+          <h3>Settings</h3>
+          <p class="card__reads">reads</p>
+          <p><code>settings.json</code>, <code>settings.local.json</code>, <code>CLAUDE.md</code>, access config.</p>
+          <p class="card__writes">writes</p>
+          <p>All of them — with a backup on every change.</p>
+        </article>
+
+        <article class="card">
+          <span class="card__no">07</span>
+          <h3>Memory</h3>
+          <p class="card__reads">reads</p>
+          <p><code>~/.claude/memory</code> and every project memory folder.</p>
+          <p class="card__writes">writes</p>
+          <p>The memory files themselves.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MISSION ============ -->
+  <section class="band band--ink" id="mission">
+    <div class="wrap">
+      <p class="kicker">Chapter 03 — The Mission</p>
+      <h2 class="h2">Five steps to a command centre<br />over your own install.</h2>
+
+      <ol class="steps">
+        <li>
+          <span class="steps__no">01</span>
+          <div>
+            <h3>Deploy</h3>
+            <p>Clone, install, build, serve. One command if you let the installer do it.</p>
+            <pre><code>git clone https://github.com/aswathas/claude-command-center.git
+cd claude-command-center
+npm install
+npm run build
+npm start</code></pre>
+            <p class="steps__note">Windows: <code>start.cmd</code> does it in one click. macOS/Linux: <code>./scripts/install.sh</code>.</p>
+          </div>
+        </li>
+
+        <li>
+          <span class="steps__no">02</span>
+          <div>
+            <h3>Plug in <em>your</em> Claude Code</h3>
+            <p>
+              By default the console reads <code>~/.claude</code> and <code>~/.claude.json</code> — the
+              install you already have, auto-detected. Point it somewhere else with two environment
+              variables: a scratch profile, a second machine, a test rig.
+            </p>
+            <pre><code>CLAUDE_HOME=/path/to/.claude \
+CLAUDE_JSON=/path/to/.claude.json \
+npm start</code></pre>
+            <p class="steps__note">Run <code>npm run doctor</code> first — it prints the exact paths it detected, and whether they hold skills, plugins, MCP servers and transcripts.</p>
+          </div>
+        </li>
+
+        <li>
+          <span class="steps__no">03</span>
+          <div>
+            <h3>Open the console</h3>
+            <p>
+              <code>http://127.0.0.1:8787</code>. Loopback only. Nothing on the network can reach it
+              until you say otherwise. For live development, <code>npm run dev</code> runs the API on
+              8787 and Vite on 5173 with hot reload.
+            </p>
+          </div>
+        </li>
+
+        <li>
+          <span class="steps__no">04</span>
+          <div>
+            <h3>Take the wheel</h3>
+            <p>
+              Toggle a skill, park a plugin, add an MCP server, edit a setting, rewrite a memory file.
+              Every change writes the real file and drops a <code>.bak.&lt;timestamp&gt;</code> beside it.
+              Secrets read back masked, and merged back in place on save — a round-trip can never
+              replace a live token with a placeholder.
+            </p>
+          </div>
+        </li>
+
+        <li>
+          <span class="steps__no">05</span>
+          <div>
+            <h3>Take it to the phone</h3>
+            <p>
+              Settings → Phone access puts the console on your LAN address, with a QR code in the panel
+              and an access code every request must carry. The phone answers the only question that
+              matters at 1am: <em>is it still going?</em> Switch phone access off and the console closes
+              to the outside world immediately.
+            </p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ OATH ============ -->
+  <section class="band band--paper" id="oath">
+    <div class="wrap">
+      <p class="kicker">Chapter 04 — The Oath</p>
+      <h2 class="h2">Safety rules the code<br />enforces, not the docs promise.</h2>
+      <div class="oath">
+        <div class="oath__item"><b>Loopback by default.</b> The server binds to 127.0.0.1. Nothing listens on the network until phone access is explicitly switched on.</div>
+        <div class="oath__item"><b>Credentials are never read.</b> <code>~/.claude/credentials.json</code> is refused, not skipped.</div>
+        <div class="oath__item"><b>Masked on the way out.</b> Any key matching token / secret / key / auth / cookie, and anything shaped like a provider key, renders as <code>125 chars · hidden</code>.</div>
+        <div class="oath__item"><b>Masked values merge back on the way in.</b> Saving the raw settings editor restores the stored secrets instead of writing placeholders over them.</div>
+        <div class="oath__item"><b>Every write is backed up.</b> <code>settings.json.bak.&lt;timestamp&gt;</code> sits beside the file it replaced.</div>
+        <div class="oath__item"><b>Writes stay inside the walls.</b> Confined to the Claude home, the app cache, and <code>~/.claude.json</code>.</div>
+        <div class="oath__item"><b>Disabling is not deleting.</b> Skills and MCP servers are moved aside — the folder is still there tomorrow.</div>
+        <div class="oath__item"><b>No destructive default.</b> Deleting means deleting. It is never the default action on a control.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LEDGER ============ -->
+  <section class="band band--ink" id="ledger">
+    <div class="wrap">
+      <p class="kicker">Chapter 05 — The Ledger</p>
+      <h2 class="h2">Token telemetry that cannot<br />drift from the tool's own numbers.</h2>
+      <div class="cols cols--split">
+        <div>
+          <p>
+            Claude Code writes one JSONL transcript per session. Every assistant message carries a
+            <code>usage</code> block, and each session ends with a <code>cost-state</code> record holding
+            Claude Code's own accounting.
+          </p>
+          <p>
+            The detail that took the longest: the same API message can be written more than once inside a
+            transcript, so naive summing <strong>inflates</strong> your token count. The indexer dedups on
+            <code>(sessionId, message.id)</code>, and takes cost from the session's own cost-state record
+            when it has one — so the dashboard cannot disagree with the tool about the same history.
+          </p>
+        </div>
+        <ul class="ledger">
+          <li><b>9.2<i>s</i></b><span>cold scan of 1,292 transcripts / 869 MB</span></li>
+          <li><b>0.13<i>s</i></b><span>rescan, served from the per-file cache</span></li>
+          <li><b>(mtime, size)</b><span>cache key — only changed files are re-read</span></li>
+          <li><b>0</b><span>synthetic day buckets — a session's cost lands on a real day</span></li>
+        </ul>
+      </div>
+      <figure class="shot">
+        <img src="assets/img/console.png" alt="Captain Code console page showing transcripts and token telemetry" loading="lazy" />
+        <figcaption>Station 01 — Console. Real install, real transcripts, token cost straight from Claude Code's own cost-state record.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ SCREENSHOTS ============ -->
+  <section class="band band--paper">
+    <div class="wrap">
+      <p class="kicker">Chapter 06 — Stations 03, 04, 05</p>
+      <h2 class="h2">Skills, plugins, MCP servers.<br />Toggle them from a browser.</h2>
+      <div class="shots">
+        <figure class="shot">
+          <img src="assets/img/skills.png" alt="Skills page listing skill folders with enable and disable toggles" loading="lazy" />
+          <figcaption>Station 03 — Skills. Disabling moves the folder to <code>skills-off</code>.</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="assets/img/mcp.png" alt="MCP servers page showing global and per-project servers" loading="lazy" />
+          <figcaption>Station 05 — MCP servers, global and per project scope.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DEPLOY ============ -->
+  <section class="band band--ink deploy" id="deploy">
+    <div class="wrap">
+      <p class="stamp stamp--light">MISSION COMPLETE · DEPLOY THE CONSOLE</p>
+      <h2 class="h2 h2--xl">Take command of<br />your own install.</h2>
+      <p class="deploy__lede">
+        Free, MIT licensed, runs entirely on your machine. Bring your own Claude Code — it reads the
+        files you already have.
+      </p>
+      <div class="deploy__actions">
+        <a class="btn btn--solid btn--lg" href="https://github.com/aswathas/claude-command-center" target="_blank" rel="noopener">
+          <span>github.com/aswathas/claude-command-center</span>
+        </a>
+        <a class="btn btn--ghost btn--lg" href="https://github.com/aswathas/claude-command-center#readme" target="_blank" rel="noopener">
+          <span>Read the field manual</span>
+        </a>
+      </div>
+      <div class="deploy__meta">
+        <span>MIT</span><span>Node 18+</span><span>Windows · macOS · Linux</span><span>869 MB of transcripts, read in place</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__grid">
+    <div>
+      <p class="foot__mark">★</p>
+      <p class="foot__name">CAPTAIN CODE</p>
+      <p class="foot__tag">The Captain Command Centre for Claude Code.</p>
+    </div>
+    <div>
+      <p class="foot__label">Station</p>
+      <a href="#situation">The Situation</a>
+      <a href="#console">The Console</a>
+      <a href="#mission">The Mission</a>
+      <a href="#oath">The Oath</a>
+      <a href="#ledger">The Ledger</a>
+    </div>
+    <div>
+      <p class="foot__label">Source</p>
+      <a href="https://github.com/aswathas/claude-command-center" target="_blank" rel="noopener">GitHub repository</a>
+      <a href="https://github.com/aswathas/claude-command-center/issues" target="_blank" rel="noopener">Issues</a>
+      <p class="foot__label foot__label--sp">Built by Aswath</p>
+      <p class="foot__fine">Free and MIT licensed. Runs on your machine. Not affiliated with Anthropic.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
